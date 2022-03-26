@@ -1,0 +1,118 @@
+.contato {
+    .banner {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/banner-contato.png") center/cover no-repeat;
+        margin: 0 0 80px 0;
+        @media screen and (max-width: $mobile) {
+            margin: 0 0 64px 0;
+        }
+        * {
+            color: $white;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 64px;
+            @media screen and (max-width: $mobile) {
+                display: block;
+            }
+        }
+        &__text {
+            width: 100%;
+            .header-sec {
+                h1 {
+                    @media screen and (max-width: $mobile) {
+                        font-size: 34px;
+                    }
+                }
+                p {
+                    &:first-of-type {
+                        margin-top: 32px;
+                        @media screen and (max-width: $mobile) {
+                            margin-top: 24px;
+                        }
+                    }
+                    &:not(:last-of-type) {
+                        margin-bottom: 24px;
+                        @media screen and (max-width: $mobile) {
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+            }
+            ul {
+                li {
+                    display: flex;
+                    align-items: center;
+                    &:not(:last-of-type) {
+                        margin: 0 0 20px 0;
+                    }
+                    img {
+                        margin: 0 16px 0 0;
+                    }
+                    div {
+                        strong {
+                            font-weight: 600;
+                        }
+                        a {
+                            font-weight: 300;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        &__form {
+            width: 100%;
+            background: $white;
+            border-radius: 24px;
+            padding: 40px 32px;
+            margin: 40px 0 calc(-80px + -72px) 0;
+            box-shadow: 0px 16px 64px rgba(0, 0, 0, 0.08);
+            @media screen and (max-width: $mobile) {
+                padding: 32px 20px;
+            }
+            * {
+                color: $black;
+            }
+            p {
+                margin: 0 0 24px 0;
+                @media screen and (max-width: $mobile) {
+                    margin: 0 0 16px 0;
+                }
+            }
+            fieldset {
+                label {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $light-grey;
+                    border-radius: 1000px;
+                    padding: 0 24px;
+                    height: 46px;
+                    width: 100%;
+                    @media screen and (max-width: $mobile) {
+                        padding: 0;
+                        justify-content: center;
+                    }
+                    span {
+                        color: $grey;
+                        opacity: .64;
+                        display: block;
+                        font: 400 15px/1 $font;
+                        margin: 0 40px 0 0;
+                        @media screen and (max-width: $mobile) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            textarea {
+                margin: 20px 0 0 0;
+            }
+            button {
+                width: 100%;
+                margin: 32px 0 0 0;
+            }
+        }
+    }
+}

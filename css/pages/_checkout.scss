@@ -1,0 +1,204 @@
+.checkout {
+    &__header {
+        padding: 80px 0 64px 0;
+        @media screen and (max-width: $mobile) {
+            padding: 40px 0;
+        }
+        .title-sec {
+            margin: 0 0 40px 0;
+            @media screen and (max-width: $mobile) {
+                margin: 0 0 32px 0;
+            }
+        }
+        section {
+            border: 1px solid $light-grey;
+            border-radius: 24px;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media screen and (max-width: $mobile) {
+                display: block;
+                padding: 32px 20px;
+            }
+            aside {
+                h3 {
+                    text-transform: uppercase;
+                    font: 700 22px/170% $font;
+                    margin: 0 0 6px 0;
+                }
+            }
+            div {
+                display: flex;
+                align-items: center;
+                max-width: 540px;
+                width: 100%;
+                position: relative;
+                @media screen and (max-width: $mobile) {
+                    display: block;
+                    margin: 16px 0 0 0;
+                }
+                button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    @media screen and (max-width: $mobile) {
+                        position: relative;
+                        width: 100%;
+                        margin: 8px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        gap: 64px;
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+            gap: 40px;
+        }
+        h4 {
+            text-transform: uppercase;
+            margin: 0 0 32px 0;
+            @media screen and (max-width: $mobile) {
+                margin: 0 0 24px 0;
+            }
+        }
+        &__dados {
+            width: 100%;
+            section {
+                display: flex;
+                gap: 24px;
+                fieldset {
+                    width: 100%;
+                }
+                @media screen and (max-width:  $mobile) {
+                    display: block;
+                    margin: 0 0 24px 0;
+                }
+            }
+        }
+        &__resumo {
+            width: 100%;
+            footer {
+                padding: 12px 0;
+                margin: 32px 0 0 0;
+                border-top: 1px solid $light-grey;
+                border-bottom: 1px solid $light-grey;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                strong {
+                    font-weight: 600;
+                }
+            }
+            &__products {
+                ul {
+                    li {
+                        display: flex;
+                        align-items: center;
+                        &:not(:first-of-type) {
+                            padding-top: 16px;
+                        }
+                        &:not(:last-of-type) {
+                            border-bottom: 1px solid $light-grey;
+                            padding-bottom: 16px;
+                        }
+                        figure {
+                            margin: 0 20px 0 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            max-width: 48px;
+                            min-width: 48px;
+                            @media screen and (max-width: $mobile) {
+                                margin: 0 16px 0 0;
+                            }
+                            img {
+                                max-height: 100%;
+                            }
+                        }
+                        aside {
+                            width: 100%;
+                            p {
+                                font-weight: 400;
+                                margin: 0 0 8px 0;
+                                line-height: 140%;
+                            }
+                            div {
+                                display: flex;
+                                align-items: center;
+                                h6 {
+                                    font-weight: 800;
+                                    margin: 0 16px 0 0;
+                                    @media screen and (max-width: $mobile) {
+                                        margin: 0 12px 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__frete {
+                margin: 40px 0 0 0;
+                ul {
+                    li {
+                        &:not(:first-of-type) {
+                            label {
+                                padding-top: 16px;
+                            }
+                        }
+                        &:not(:last-of-type) {
+                            label {
+                                border-bottom: 1px solid $light-grey;
+                                padding-bottom: 16px;
+                            }
+                        }
+                        label {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            input {
+                                margin: 0 16px 0 0;
+                            }
+                            aside {
+                                p {
+                                    line-height: 1;
+                                    &:not(:last-of-type) {
+                                        margin: 0 0 8px 0;
+                                    }
+                                    strong {
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__pagseguro {
+                margin: 40px 0 0 0;
+                background: #FAFAFA;
+                border-radius: 16px;
+                padding: 32px; 
+                @media screen and (max-width: $mobile) {
+                    padding: 32px 20px;
+                }
+                & > img {
+                    margin: 0 0 24px 0;
+                }
+                p {
+                    margin: 24px 0 0 0;
+                }
+                .button {
+                    margin: 24px 0 0 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

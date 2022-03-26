@@ -1,0 +1,249 @@
+.logado {
+    .banner-intra {
+        margin: 0 0 -88px 0;
+        &::before {
+            background: url("../../assets/graph-left.svg") left/contain no-repeat;
+        }
+        &::after {
+            content: "";
+            background: url("../assets/graph-right.svg") right/contain no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
+        }
+    }
+    &__content {
+        position: relative;
+        z-index: 5;
+        &__box {
+            background: $white;
+            box-shadow: 0px 16px 64px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 48px 40px;
+            @media screen and (max-width: $mobile) {
+                padding: 40px 20px;
+            }
+            h5 {
+                text-transform: uppercase;
+                margin: 0 0 32px 0;
+                @media screen and (max-width: $mobile) {
+                    margin: 0 0 24px 0;
+                }
+            }
+            .button {
+                width: 100%;
+                margin: 32px 0 0 0;
+                @media screen and (max-width: $mobile) {
+                    margin: 24px 0 0 0;
+                }
+            }
+        }
+    }
+    &--dados {
+        .logado__content {
+            .container {
+                max-width: 750px;
+            }
+            &__box {
+                form {
+                    section {
+                        display: flex;
+                        gap: 24px;
+                        fieldset {
+                            width: 100%;
+                            h6 {
+                                margin: 12px 0 16px 0;
+                                font: 300 12px/160% $font;
+                                @media screen and (max-width: $mobile) {
+                                    margin: 12px 0 0 0;
+                                }
+                            }
+                        }
+                        @media screen and (max-width:  $mobile) {
+                            display: block;
+                            margin: 0 0 24px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--pedidos {
+        .logado__content {
+            .container {
+                max-width: 840px;
+            }
+            &__box {
+                ul {
+                    li {
+                        border: 1px solid $light-grey;
+                        border-radius: 16px;
+                        padding: 24px;
+                        @media screen and (max-width: $mobile) {
+                            padding: 20px;
+                        }
+                        &:not(:last-of-type) {
+                            margin: 0 0 24px 0;
+                            @media screen and (max-width: $mobile) {
+                                margin: 0 0 16px 0;
+                            }
+                        }
+                        header {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 24px;
+                            @media screen and (max-width: $mobile) {
+                                flex-wrap: wrap;
+                                gap: 16px;
+                            }
+                            aside {
+                                @media screen and (max-width: $mobile) {
+                                    width: calc(50% - 8px);
+                                }
+                                p {
+                                    font-weight: 400;
+                                    &:not(:last-of-type) {
+                                        margin: 0 0 8px 0;
+                                        @media screen and (max-width: $mobile) {
+                                            margin: 0;
+                                        }
+                                    }
+                                    &.finalizado {
+                                        color: #26CA67;
+                                    }
+                                    &.cancelado {
+                                        color: #F42F1A;
+                                    }
+                                    strong {
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        .button {
+                            margin: 24px auto 0 auto;
+                            max-width: 310px;
+                            width: 100%;
+                            @media screen and (max-width: $mobile) {
+                                margin: 16px auto 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--pedido {
+        .banner-intra {
+            margin: 0 0 -120px 0;
+        }
+        .logado__content {
+            &__container-double {
+                display: flex;
+                margin: 24px 0 0 0;
+                gap: 24px;
+                @media screen and (max-width: $mobile) {
+                    display: block;
+                }
+                .logado__content__box {
+                    width: 100%;
+                    section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        &:not(:last-of-type) {
+                            margin: 0 0 10px 0;
+                        }
+                        p {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+            .container {
+                & > .logado__content__box {
+                    max-width: 560px;
+                    width: 100%;
+                    margin: 0 auto;
+                    ul {
+                        li {
+                            display: flex;
+                            align-items: center;
+                            border-bottom: 1px solid $light-grey;
+                            padding-bottom: 16px;
+                            &:not(:first-of-type) {
+                                padding-top: 16px;
+                            }
+                            figure {
+                                margin: 0 20px 0 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                max-width: 48px;
+                                min-width: 48px;
+                                @media screen and (max-width: $mobile) {
+                                    margin: 0 16px 0 0;
+                                }
+                                img {
+                                    max-height: 100%;
+                                }
+                            }
+                            aside {
+                                width: 100%;
+                                p {
+                                    font-weight: 400;
+                                    margin: 0 0 8px 0;
+                                    line-height: 140%;
+                                }
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    h6 {
+                                        font-weight: 800;
+                                        margin: 0 16px 0 0;
+                                        @media screen and (max-width: $mobile) {
+                                            margin: 0 12px 0 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    footer {
+                        margin: 32px 0 0 0;
+                        div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            &:not(:last-of-type) {
+                                margin: 0 0 12px 0;
+                            }
+                            &:last-of-type {
+                                padding: 12px 0 0 0;
+                                border-top: 1px solid $light-grey;
+                            }
+                            p {
+                                strong {
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+                & > p {
+                    text-align: center;
+                    margin: 48px 0 0 0;
+                    a {
+                        color: #F42F1A;
+                    }
+                }
+            }
+        }
+    }
+}

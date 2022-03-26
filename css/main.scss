@@ -13,6 +13,14 @@ $mobile: 1080px;
 
 // IMPORTS
 @import 'pages/home';
+@import 'pages/sobre';
+@import 'pages/produtos';
+@import 'pages/produto';
+@import 'pages/contato';
+@import 'pages/carrinho';
+@import 'pages/checkout';
+@import 'pages/acesso';
+@import 'pages/logado';
 
 // RESETS
 * {
@@ -131,6 +139,9 @@ option {
     border-radius: 1000px;
     background: $white;
     border: 1px solid $light-grey;
+    @media screen and (max-width: $mobile) {
+        height: 40px;
+    }
     &::placeholder {
         opacity: .64;
         font-weight: 400;
@@ -146,9 +157,19 @@ fieldset {
     &:not(:last-of-type) {
         margin: 0 0 20px 0;
     }
+    & > label {
+        text-transform: uppercase;
+        display: block;
+        margin: 0 0 12px 0;
+        font: 600 15px/1 $font;
+        span {
+            color: #F61111;
+        }
+    }
 }
 
 textarea {
+    border-radius: 24px;
     padding-top: 20px;
     height: 150px;
 }
@@ -972,6 +993,10 @@ strong {
             color: $white;
         }
     }
+    &--grey {
+        border-color: $light-grey;
+        background: $light-grey;
+    }
 }
 
 .title-sec {
@@ -982,9 +1007,8 @@ strong {
     h2 {
         display: flex;
         align-items: center;
-        justify-content: center;
         @media screen and (max-width: $mobile) {
-            font-size: 24px;
+            font-size: 28px;
         }
         &::after {
             content: "";
@@ -1001,12 +1025,27 @@ strong {
             }
         }
     }
+    p {
+        margin: 40px 0 0 0;
+        max-width: 750px;
+        width: 100%;
+        @media screen and (max-width: $mobile) {
+            margin: 32px 0 0 0;
+        }
+    }
     &--center {
         h2 {
             flex-direction: column-reverse;
             text-align: center;
             &::after {
                 margin: 0 auto 24px auto;
+            }
+        }
+        p {
+            text-align: center;
+            margin: 40px auto 0 auto;
+            @media screen and (max-width: $mobile) {
+                margin: 32px auto 0 auto;
             }
         }
     }
@@ -1110,10 +1149,7 @@ strong {
 }
 
 .pagination {
-    margin: 64px 0 0 0;
-    @media screen and (max-width:  $mobile) {
-        margin: 48px 0 0 0;
-    }
+    margin: 32px 0 0 0;
     .container {
         display: flex;
         align-items: center;
@@ -1152,7 +1188,7 @@ strong {
         visibility: visible;
     }
     .container {
-        max-width: 540px;
+        max-width: 600px;
         * {
             text-align: center;
         }
@@ -1221,148 +1257,6 @@ strong {
                     max-width: 300px;
                     width: 100%;
                 }
-                &:hover {
-                    footer {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateY(0);
-                    }
-                }
-                & > a {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
-                    height: 320px;
-                    border: 1px solid $light-grey;
-                    border-radius: 16px;
-                    margin: 0 0 20px 0;
-                    padding: 30px;
-                    header {
-                        display: flex;
-                        align-items: center;
-                        position: absolute;
-                        top: 20px;
-                        right: 20px;
-                        span {
-                            text-transform: uppercase;
-                            border-radius: 1000px;
-                            display: flex;
-                            padding: 6px 12px;
-                            align-items: center;
-                            font: 700 14px/1 $font;
-                            &:not(:last-of-type) {
-                                margin: 0 16px 0 0;
-                            }
-                            img {
-                                margin: 0 12px 0 0;
-                            }
-                            &.frete {
-                                background: $yellow;
-                            }
-                            &.cupom {
-                                color: $white;
-                                background: $black;
-                            }
-                        }
-                    }
-                }
-                h2 {
-                    margin: 0 0 16px 0;
-                    font: 400 18px/140% $font;
-                    a {
-                        display: block;
-                        text-transform: initial;
-                        text-align: center;
-                    }
-                }
-                section {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    h4 {
-                        font-size: 18px;
-                        strong {
-                            font-weight: 800;
-                        }
-                        &:first-of-type {
-                            margin: 0 8px 0 0;
-                            position: relative;
-                            color: $grey;
-                            font-weight: 300;
-                            &::before {
-                                content: "";
-                                width: calc(100% + 4px);
-                                height: 1px;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%) rotate(-4deg);
-                                background: $grey;
-                            }
-                        }
-                    }
-                }
-                h6 {
-                    margin: 10px 0 0 0;
-                    font: 300 14px/1 $font;
-                    text-align: center;
-                }
-                footer {
-                    display: flex;
-                    align-items: center;
-                    margin: 24px 0 0 0;
-                    transition: 300ms ease;
-                    opacity: 0;
-                    visibility: hidden;
-                    transform: translateY(100%);
-                    button {
-                        position: relative;
-                        padding: 0;
-                        margin: 0 auto;
-                        padding: 0 16px;
-                        width: 100%;
-                        @media screen and (max-width: $mobile) {
-                            padding: 0;
-                        }
-                        &::after {
-                            content: url("../assets/bag.svg");
-                            height: 46px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-left: 1px solid rgba(0, 0, 0, .1);
-                            padding: 0 0 0 12px;
-                            margin: 0 0 0 12px;
-                            @media screen and (max-width: $mobile) {
-                                display: none;
-                            }
-                        }
-                    }
-                    input {
-                        font-size: 16px;
-                        min-width: 75px;
-                        max-width: 75px;
-                        padding: 0 8px;
-                        margin: 0 0 0 16px;
-                        text-align: center;
-                        @media screen and (max-width: $mobile) {
-                            max-width: 64px;
-                            margin: 0 0 0 8px;
-                            min-width: 64px;
-                        }
-                        &::-webkit-inner-spin-button {
-                            opacity: 1;
-                        }
-                    }
-                }
-                @media screen and (max-width: $mobile) {
-                    footer {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateY(0);
-                    }
-                }
             }
         }
         [data-prev],
@@ -1404,5 +1298,458 @@ strong {
         margin: 0 0 0 12px;
         height: 24px;
         transition: 400ms ease;
+    }
+}
+
+.header-sec {
+    margin: 0 0 40px 0;
+    @media screen and (max-width: $mobile) {
+        margin: 0 0 32px 0;
+    }
+    * {
+        text-align: center;
+    }
+    h6 {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0 0 12px 0;
+        letter-spacing: 0.16em;
+    }
+    h2,
+    h1 {
+        text-transform: uppercase;
+    }
+    p {
+        margin: 12px 0 0 0;
+    }
+    &--left {
+        * {
+            text-align: left;
+        }
+    }
+    &--white {
+        * {
+            color: $white;
+        }
+    }
+}
+
+.lojas {
+    padding: 144px 0 0 0 ;
+    @media screen and (max-width: $mobile) {
+        padding: 80px 0 0 0;
+    }
+    .container {
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 64px 24px;
+            margin: 80px 0 0 0;
+            @media screen and (max-width: $mobile) {
+                margin: 64px 0 0 0;
+            }
+            article {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 1px solid $light-grey;
+                border-radius: 16px;
+                padding: 0 32px 32px 32px;
+                * {
+                    text-align: center;
+                }
+                &:not(:first-of-type) {
+                    width: calc(50% - 12px);
+                    @media screen and (max-width: $mobile) {
+                        width: 100%;
+                    }
+                }
+                img {
+                    margin: -32px auto 0 auto;
+                }
+                h3 {
+                    text-transform: uppercase;
+                    font: 700 28px/1 $font;
+                    margin: 32px 0 0 0;
+                }
+                h6 {
+                    font: 300 18px/170% $font;
+                    margin: 16px 0 12px 0;
+                }
+                p {
+                    &:not(:last-of-type) {
+                        margin: 0 0 8px 0;
+                    }
+                    strong {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        footer {
+            margin: 40px 0 0 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            @media screen and (max-width: $mobile) {
+                flex-direction: column;
+                gap: 12px;
+                margin: 32px 0 0 0;
+            }
+            p {
+                flex: 1;
+                width: 100%;
+                @media screen and (max-width: $mobile) {
+                    text-align: center;
+                }
+                strong {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.modal-foto {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms ease;
+    opacity: 0;
+    visibility: hidden;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        article {
+            position: relative;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button {
+                color: $white;
+                position: absolute;
+                top: -16px;
+                right: 20px;
+                transform: translate(100%, -100%);
+                font: 400 32px/1 $font;
+                transition: 400ms ease;
+                @media screen and (max-width: $mobile) {
+                    font-size: 24px;
+                }
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+
+.btn-whatsapp {
+    position: fixed;
+    top: 600px;
+    right: 20px;
+    z-index: 9;
+    border-radius: 1000px;
+    box-shadow: 0px 8px 32px rgba(32, 161, 19, 0.32);
+    @media screen and (max-width: $mobile) {
+        top: unset;
+        bottom: 20px;
+    }
+}
+
+.banner {
+    border-bottom: 4px solid $yellow;
+    padding: 80px 0;
+    @media screen and (max-width: $mobile) {
+        padding: 64px 0;
+    }
+    * {
+        color: $white;
+    }
+}
+
+.card-produto {
+    max-width: 360px;
+    width: 100%;
+    &:hover {
+        footer {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+    & > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 320px;
+        border: 1px solid $light-grey;
+        border-radius: 16px;
+        margin: 0 0 20px 0;
+        padding: 30px;
+        header {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            span {
+                text-transform: uppercase;
+                border-radius: 1000px;
+                display: flex;
+                padding: 6px 12px;
+                align-items: center;
+                font: 700 14px/1 $font;
+                &:not(:last-of-type) {
+                    margin: 0 16px 0 0;
+                }
+                img {
+                    margin: 0 12px 0 0;
+                }
+                &.frete {
+                    background: $yellow;
+                }
+                &.cupom {
+                    color: $white;
+                    background: $black;
+                }
+            }
+        }
+        img {
+            max-height: 100%;
+        }
+    }
+    h1 {
+        font: 400 32px/140% $font;
+        margin: 0 0 16px 0;
+        a {
+            display: block;
+            text-transform: initial;
+        }
+    }
+    h2 {
+        margin: 0 0 16px 0;
+        font: 400 18px/140% $font;
+        a {
+            display: block;
+            text-transform: initial;
+            text-align: center;
+        }
+    }
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h4 {
+            font-size: 18px;
+            strong {
+                font-weight: 800;
+            }
+            &:first-of-type {
+                margin: 0 8px 0 0;
+                position: relative;
+                color: $grey;
+                font-weight: 300;
+                &::before {
+                    content: "";
+                    width: calc(100% + 4px);
+                    height: 1px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(-4deg);
+                    background: $grey;
+                }
+            }
+        }
+    }
+    h6 {
+        margin: 10px 0 0 0;
+        font: 300 14px/1 $font;
+        text-align: center;
+    }
+    footer {
+        display: flex;
+        align-items: center;
+        margin: 24px 0 0 0;
+        transition: 300ms ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
+        button {
+            position: relative;
+            padding: 0;
+            margin: 0 auto;
+            padding: 0 16px;
+            width: 100%;
+            @media screen and (max-width: $mobile) {
+                padding: 0;
+            }
+            &::after {
+                content: url("../assets/bag.svg");
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-left: 1px solid rgba(0, 0, 0, .1);
+                padding: 0 0 0 12px;
+                margin: 0 0 0 12px;
+                @media screen and (max-width: $mobile) {
+                    display: none;
+                }
+            }
+        }
+        input {
+            font-size: 16px;
+            min-width: 75px;
+            max-width: 75px;
+            padding: 0 8px;
+            margin: 0 0 0 16px;
+            text-align: center;
+            @media screen and (max-width: $mobile) {
+                max-width: 64px;
+                margin: 0 0 0 8px;
+                min-width: 64px;
+            }
+            &::-webkit-inner-spin-button {
+                opacity: 1;
+            }
+        }
+    }
+    @media screen and (max-width: $mobile) {
+        footer {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}
+
+.banner-intra {
+    background: $black;
+    position: relative;
+    padding: 80px 0 0 0;
+    border-bottom: 4px solid $yellow;
+    min-height: 375px;
+    z-index: 1;
+    &::before {
+        content: "";
+        background: url("../assets/graph-center.svg") center/contain no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @media screen and (max-width: $mobile) {
+            display: none;
+        }
+    }
+    .container {
+        position: relative;
+        z-index: 5;
+        .header-sec {
+            position: relative;
+            a {
+                position: absolute;
+                left: 0;
+                top: 4px;
+                display: flex;
+                align-items: center;
+                font: 600 16px/1 $font;
+                @media screen and (max-width: $mobile) {
+                    top: -56px;
+                }
+                &::before {
+                    content: url("../assets/arrow-back.svg");
+                    margin: 0 8px 0 0;
+                }
+            }
+            h6 {
+                font-weight: 400;
+                letter-spacing: 0;
+            }
+        }
+        p {
+            margin: -24px 0 0 0;
+            strong {
+                font-weight: 600;
+                &.cancelado {
+                    color: #F42F1A;
+                }
+                &.finalizado {
+                    color: #26CA67;
+                }
+            }
+        }
+        section {
+            margin: 40px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width: $mobile) {
+                margin: 32px 0 0 0;
+            }
+            a {
+                font: 700 24px/1 $font;
+                text-transform: uppercase;
+                opacity: .5;
+                transition: 400ms ease;
+                display: flex;
+                align-items: center;
+                @media screen and (max-width: $mobile) {
+                    font-size: 18px;
+                }
+                &::after {
+                    content: "";
+                    border-radius: 1000px;
+                    width: 12px;
+                    height: 12px;
+                    margin: 0 0 0 16px;
+                    display: block;
+                    background: $white;
+                    @media screen and (max-width: $mobile) {
+                        width: 6px;
+                        height: 6px;
+                        margin: 0 0 0 12px;
+                    }
+                }
+                &:not(:last-of-type) {
+                    margin: 0 40px 0 0;
+                    @media screen and (max-width: $mobile) {
+                        margin: 0 16px 0 0;
+                    }
+                }
+                &:hover {
+                    opacity: 1;
+                }
+                &.active {
+                    opacity: 1;
+                    &::after {
+                        background: $yellow;
+                    }
+                }
+            }
+        }
+    }
+    * {
+        text-align: center;
+        color: $white;
     }
 }
